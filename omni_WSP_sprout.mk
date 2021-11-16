@@ -17,17 +17,10 @@
 #
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/embedded.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-# Inherit from WSP_sprout device
-$(call inherit-product, device/hmd/WSP_sprout/device.mk)
-
-# Inherit some common Omni stuff.
+# Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
-$(call inherit-product, vendor/omni/config/gsm.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := WSP_sprout
@@ -35,4 +28,4 @@ PRODUCT_NAME := omni_WSP_sprout
 PRODUCT_BRAND := Nokia
 PRODUCT_MODEL := Nokia 2.2
 PRODUCT_MANUFACTURER := hmd
-PRODUCT_RELEASE_NAME := Nokia Nokia 2.2
+PRODUCT_RELEASE_NAME := Nokia 2.2

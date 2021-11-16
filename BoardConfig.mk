@@ -28,6 +28,10 @@ TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := generic
 
+# Metadata
+#BOARD_USES_METADATA_PARTITION := true
+#BOARD_ROOT_EXTRA_FOLDERS += data_mirror linkerconfig metadata
+
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
@@ -50,8 +54,8 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_COPY_OUT_VENDOR := vendor
 
 # A/B
-AB_OTA_UPDATER := true
-TW_INCLUDE_REPACKTOOLS := true
+#AB_OTA_UPDATER := true
+#TW_INCLUDE_REPACKTOOLS := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 buildvariant=user
@@ -82,8 +86,42 @@ VENDOR_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 16.1.0
 
 # TWRP Configuration
-TW_THEME := portrait_hdpi
-TW_EXTRA_LANGUAGES := true
-TW_SCREEN_BLANK_ON_BOOT := true
+TW_HAS_MTP := true
+TW_MTP_DEVICE := /dev/mtp_usb
+TW_INTERNAL_STORAGE_PATH := "/data/media/0"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
+#TW_NO_REBOOT_BOOTLOADER := false
+TW_DEFAULT_EXTERNAL_STORAGE := true
+TW_NO_USB_STORAGE := false
 TW_INPUT_BLACKLIST := "hbtp_vm"
+HAVE_SELINUX := true
+
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
+TW_DEFAULT_EXTERNAL_STORAGE := true
 TW_USE_TOOLBOX := true
+TW_EXTRA_LANGUAGES := true
+TW_DEFAULT_LANGUAGE := en
+TW_NO_SCREEN_BLANK := true
+TW_NO_BATT_PERCENT := false
+TW_EXCLUDE_SUPERSU := true
+TW_INCLUDE_NTFS_3G := true     
+TW_INCLUDE_FUSE_EXFAT := true
+TW_NO_SCREEN_TIMEOUT := true
+TWRP_INCLUDE_LOGCAT := true
+TW_INCLUDE_FB2PNG := true                     # Include Screenshot Support 
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
+TW_SECONDARY_BRIGHTNESS_PATH := /sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness
+TW_DEFAULT_BRIGHTNESS := 80
+
+# TW Version
+TW_DEVICE_VERSION := 3.5.2_1
+#
+#
+#
+# The end! (Sebaubuntus script really helped me lol)
+#
+#
+#
