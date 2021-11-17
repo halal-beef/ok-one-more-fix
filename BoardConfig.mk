@@ -101,6 +101,21 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 RECOVERY_SDCARD_ON_DATA := true 
 BOARD_RECOVERY_SWIPE := true
 
+DEVICE_RESOLUTION := 720x1520
+DEVICE_SCREEN_WIDTH := 720
+DEVICE_SCREEN_HEIGHT := 1520
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+#below tagged cause mtp didnt work anyways
+#TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun%d/file
+TARGET_RECOVERY_LCD_BACKLIGHT_PATH := "/sys/class/leds/lcd-backlight/brightness\"
+TARGET_DISABLE_TRIPLE_BUFFERING := false
+TW_THEME := portrait_hdpi
+TW_MAX_BRIGHTNESS := 255
+TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+TW_MAX_BRIGHTNESS := 255
+TW_NO_USB_STORAGE := false
+
 # TWRP Configuration
 TW_HAS_MTP := true
 TW_MTP_DEVICE := /dev/mtp_usb
